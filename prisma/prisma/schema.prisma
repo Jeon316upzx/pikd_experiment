@@ -1,0 +1,40 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // You can use PostgreSQL, MySQL, SQLite, etc.
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Profile {
+  id        Int      @id @default(autoincrement())
+  name      String
+}
+
+
+model Profile_2 {
+  id        Int      @id @default(autoincrement())
+  name      String
+}
+
+model Profile_3 {
+  id        Int      @id @default(autoincrement())
+  name      String
+}
+
+model Profile_4 {
+  id        Int      @id @default(autoincrement())
+  name      String
+}
